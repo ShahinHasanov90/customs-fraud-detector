@@ -15,3 +15,4 @@
 - Fixed Unicode handling for AZ/RU text (2025-09-30)
 - Updated API response format (2025-10-01)
 - Added rate limiting (2025-10-05)
+- Fixed concurrent access issue (2025-10-05)
