@@ -39,3 +39,4 @@
 - Updated scoring algorithm weights (2025-11-20)
 - Added support for new data format (2025-11-24)
 - Optimized batch processing performance (2025-11-27)
+- Fixed memory leak in processor (2025-12-02)
