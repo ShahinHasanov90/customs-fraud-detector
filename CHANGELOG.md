@@ -52,3 +52,4 @@
 - Fixed edge case in data validation (2025-12-22)
 - Improved error handling for malformed input (2025-12-22)
 - Updated scoring algorithm weights (2025-12-23)
+- Added support for new data format (2025-12-23)
