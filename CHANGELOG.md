@@ -58,3 +58,4 @@
 - Added new configuration options (2025-12-26)
 - Improved logging and monitoring (2025-12-26)
 - Fixed Unicode handling for AZ/RU text (2025-12-29)
+- Updated API response format (2025-12-29)
