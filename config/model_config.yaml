@@ -1,0 +1,104 @@
+# Customs Fraud Detector - Model Configuration
+# =============================================
+
+data:
+  train_path: "data/declarations_train.parquet"
+  test_path: "data/declarations_test.parquet"
+  target_column: "is_fraud"
+  declaration_id_column: "declaration_id"
+
+features:
+  numerical:
+    - declared_value_usd
+    - weight_kg
+    - quantity
+    - price_per_kg
+    - price_per_unit
+    - weight_per_unit
+    - value_to_median_ratio
+    - historical_value_zscore
+    - historical_weight_zscore
+    - trade_partner_risk_score
+    - importer_fraud_rate_30d
+    - importer_declaration_count_90d
+    - hs_chapter_avg_value_ratio
+    - route_avg_value_ratio
+    - declared_value_log
+    - weight_log
+
+  categorical:
+    - origin_country
+    - destination_country
+    - hs_code_chapter
+    - transport_mode
+    - importer_risk_tier
+
+  drop_columns:
+    - declaration_id
+    - importer_id
+    - raw_description
+
+rule_engine:
+  price_deviation_threshold: 0.30
+  weight_anomaly_sigma: 3.0
+  high_risk_origins:
+    - "XX"
+    - "YY"
+    - "ZZ"
+  high_risk_hs_chapters:
+    - "24"  # Tobacco
+    - "22"  # Beverages / alcohol
+    - "71"  # Precious metals and stones
+    - "93"  # Arms and ammunition
+  min_declared_value_usd: 10.0
+  max_price_per_kg_usd: 50000.0
+
+isolation_forest:
+  n_estimators: 200
+  contamination: 0.02
+  max_samples: "auto"
+  max_features: 1.0
+  random_state: 42
+  n_jobs: -1
+
+xgboost:
+  n_estimators: 500
+  max_depth: 6
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  min_child_weight: 5
+  gamma: 0.1
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  scale_pos_weight: 43  # ~1/fraud_prevalence
+  eval_metric: "aucpr"
+  early_stopping_rounds: 30
+  random_state: 42
+  n_jobs: -1
+
+ensemble:
+  isolation_forest_weight: 0.3
+  xgboost_weight: 0.7
+  fraud_threshold: 0.5
+
+training:
+  test_size: 0.2
+  stratify: true
+  cv_folds: 5
+  random_state: 42
+
+mlflow:
+  experiment_name: "customs-fraud-detector"
+  tracking_uri: "sqlite:///mlflow.db"
+  registry_uri: "sqlite:///mlflow.db"
+  log_models: true
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  model_path: "artifacts/model_latest"
+  log_level: "info"
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
