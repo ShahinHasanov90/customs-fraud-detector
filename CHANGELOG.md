@@ -1,88 +1,20 @@
 # Changelog
 
-- Fixed concurrent access issue (2025-09-01)
-- Improved test coverage (2025-09-05)
-- Added data export functionality (2025-09-08)
-- Fixed date parsing edge cases (2025-09-08)
-- Fixed edge case in data validation (2025-09-10)
-- Improved error handling for malformed input (2025-09-10)
-- Updated scoring algorithm weights (2025-09-12)
-- Added support for new data format (2025-09-12)
-- Optimized batch processing performance (2025-09-16)
-- Fixed memory leak in processor (2025-09-17)
-- Added new configuration options (2025-09-22)
-- Improved logging and monitoring (2025-09-25)
-- Fixed Unicode handling for AZ/RU text (2025-09-30)
-- Updated API response format (2025-10-01)
-- Added rate limiting (2025-10-05)
-- Fixed concurrent access issue (2025-10-05)
-- Improved test coverage (2025-10-08)
-- Added data export functionality (2025-10-08)
-- Fixed date parsing edge cases (2025-10-14)
-- Fixed edge case in data validation (2025-10-20)
-- Improved error handling for malformed input (2025-10-20)
-- Updated scoring algorithm weights (2025-10-24)
-- Added support for new data format (2025-10-27)
-- Optimized batch processing performance (2025-10-30)
-- Fixed memory leak in processor (2025-10-31)
-- Added new configuration options (2025-11-03)
-- Improved logging and monitoring (2025-11-06)
-- Fixed Unicode handling for AZ/RU text (2025-11-06)
-- Updated API response format (2025-11-10)
-- Added rate limiting (2025-11-10)
-- Fixed concurrent access issue (2025-11-13)
-- Improved test coverage (2025-11-13)
-- Added data export functionality (2025-11-14)
-- Fixed date parsing edge cases (2025-11-14)
-- Fixed edge case in data validation (2025-11-16)
-- Improved error handling for malformed input (2025-11-16)
-- Updated scoring algorithm weights (2025-11-20)
-- Added support for new data format (2025-11-24)
-- Optimized batch processing performance (2025-11-27)
-- Fixed memory leak in processor (2025-12-02)
-- Added new configuration options (2025-12-09)
-- Improved logging and monitoring (2025-12-10)
-- Fixed Unicode handling for AZ/RU text (2025-12-10)
-- Updated API response format (2025-12-12)
-- Added rate limiting (2025-12-12)
-- Fixed concurrent access issue (2025-12-15)
-- Improved test coverage (2025-12-15)
-- Added data export functionality (2025-12-17)
-- Fixed date parsing edge cases (2025-12-17)
-- Fixed edge case in data validation (2025-12-22)
-- Improved error handling for malformed input (2025-12-22)
-- Updated scoring algorithm weights (2025-12-23)
-- Added support for new data format (2025-12-23)
-- Optimized batch processing performance (2025-12-24)
-- Fixed memory leak in processor (2025-12-25)
-- Added new configuration options (2025-12-26)
-- Improved logging and monitoring (2025-12-26)
-- Fixed Unicode handling for AZ/RU text (2025-12-29)
-- Updated API response format (2025-12-29)
-- Added rate limiting (2026-01-01)
-- Fixed concurrent access issue (2026-01-01)
-- Improved test coverage (2026-01-04)
-- Added data export functionality (2026-01-05)
-- Fixed date parsing edge cases (2026-01-05)
-- Fixed edge case in data validation (2026-01-08)
-- Improved error handling for malformed input (2026-01-12)
-- Updated scoring algorithm weights (2026-01-12)
-- Added support for new data format (2026-01-14)
-- Optimized batch processing performance (2026-01-17)
-- Fixed memory leak in processor (2026-01-17)
-- Added new configuration options (2026-01-22)
-- Improved logging and monitoring (2026-01-22)
-- Fixed Unicode handling for AZ/RU text (2026-01-24)
-- Updated API response format (2026-02-02)
-- Added rate limiting (2026-02-02)
-- Fixed concurrent access issue (2026-02-05)
-- Improved test coverage (2026-02-05)
-- Added data export functionality (2026-02-09)
-- Fixed date parsing edge cases (2026-02-11)
-- Fixed edge case in data validation (2026-02-11)
-- Improved error handling for malformed input (2026-02-14)
-- Updated scoring algorithm weights (2026-02-14)
-- Added support for new data format (2026-02-15)
-- Optimized batch processing performance (2026-02-16)
-- Fixed memory leak in processor (2026-02-18)
-- Added new configuration options (2026-02-23)
+## [1.2.0] - 2026-02-10
+### Added
+- SHAP explainability layer for all predictions
+- Batch scoring endpoint for historical audit workflows
+- MLflow experiment tracking integration
+
+### Changed
+- Upgraded XGBoost ensemble with hyperparameter tuning
+- Improved feature engineering: 40+ derived features
+
+### Fixed
+- Precision improvement from 0.85 to 0.89 via feature selection
+
+## [1.0.0] - 2025-09-01
+### Added
+- Initial release: Rule engine + Isolation Forest ensemble
+- FastAPI serving endpoint with sub-100ms latency
+- Feature engineering pipeline for customs declarations
