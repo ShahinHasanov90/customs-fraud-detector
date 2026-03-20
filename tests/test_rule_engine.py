@@ -187,7 +187,7 @@ class TestRuleEngine:
         assert "rule_score" in result_df.columns
         assert "rule_flags" in result_df.columns
         assert "is_rule_flagged" in result_df.columns
-        assert result_df.iloc[1]["is_rule_flagged"] is True
+        assert result_df.iloc[1]["is_rule_flagged"] == True
 
     def test_engine_without_commodity_stats(self, config: RuleEngineConfig) -> None:
         """Engine should still work when no commodity stats are provided."""
